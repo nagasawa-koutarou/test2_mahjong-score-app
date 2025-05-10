@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'rest_framework',           # DRF
     'corsheaders',              # CORS対応
+    'api',  # ← 必ず含まれているか確認
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,14 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+# Reactからの接続を許可
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
+
+# 認証情報付きのリクエストを許可
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = "config.urls"
 
